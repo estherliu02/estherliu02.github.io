@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-06-03'
+  last_updated: '2026-06-10'
 papers:
   o0KhkPEAAAAJ:UeHWp8X0CEIC:
     citations: 29
@@ -10,6 +10,6 @@ papers:
     title: 'Sci2Pol: Evaluating and Fine-tuning LLMs on Scientific-to-Policy Brief Generation'
     year: '2026'
   o0KhkPEAAAAJ:u-x6o8ySG0sC:
-    citations: 0
+    citations: 1
     title: "Computational Analysis Uncovering Contrasts in G\u2010Quadruplex Propensity and Aptamer Enrichment in SELEX\u2010Derived Libraries"
     year: '2026'
