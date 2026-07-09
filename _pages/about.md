@@ -26,8 +26,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am Esther Liu, a first-year Master’s student in Computer Science at Brown University, where I am fortunate to work with Prof. [Serena Booth](https://slbooth.com/). Before joining Brown, I completed my Bachelor of Computer Science at the University of Waterloo, majoring in Data Science with a minor in Statistics. During my time at Waterloo, I have worked with Prof. [Juewen Liu](https://sites.google.com/view/liujuewen/home), Prof. [Diogo Barradas](https://cs.uwaterloo.ca/~dbarrada/), and Prof. [Grant Weddell](https://cs.uwaterloo.ca/~gweddell/).
+I am Esther Liu, a first-year Master’s student in Computer Science at Brown University. I am fortunate to work with Prof. [Serena Booth](https://slbooth.com/) at Brown and Prof. [Elena L. Glassman](https://glassmanlab.seas.harvard.edu/) at Harvard. Before joining Brown, I completed my Bachelor of Computer Science at the University of Waterloo, majoring in Data Science with a minor in Statistics. During my time at Waterloo, I have worked with Prof. [Juewen Liu](https://sites.google.com/view/liujuewen/home), Prof. [Diogo Barradas](https://cs.uwaterloo.ca/~dbarrada/), and Prof. [Grant Weddell](https://cs.uwaterloo.ca/~gweddell/).
 
 My research interests lie at the intersection of NLP and HCI, particularly in how people interact with, evaluate, and learn from AI systems. My current work spans LLM benchmarking and evaluation (e.g., [Sci2Pol](https://iclr.cc/virtual/2026/poster/10009432)), human adjudication and decision-making over LLM outputs (e.g., [Models of Humans for Adjudicating AI Debate]({{ '/projects/1_project/' | relative_url }})), and the design and study of technologies that support human learning processes (e.g., A Corpus-Grounded Interface for Student Writing Revision).
 
-Outside of research, I enjoy learning languages 🇰🇷🇪🇸🇭🇰 and music 🎹🎸🎤.
+Outside of research, I enjoy learning languages 🇰🇷🇪🇸🇭🇰 and music 🎹 🎸🎤.
