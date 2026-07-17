@@ -1,12 +1,12 @@
 metadata:
-  last_updated: '2026-06-10'
+  last_updated: '2026-07-17'
 papers:
   o0KhkPEAAAAJ:UeHWp8X0CEIC:
-    citations: 29
+    citations: 33
     title: Uncovering the Genomic Manifold via Scalable Learning from the Global Microbiome
     year: '2025'
   o0KhkPEAAAAJ:d1gkVwhDpl0C:
-    citations: 1
+    citations: 2
     title: 'Sci2Pol: Evaluating and Fine-tuning LLMs on Scientific-to-Policy Brief Generation'
     year: '2026'
   o0KhkPEAAAAJ:u-x6o8ySG0sC:
