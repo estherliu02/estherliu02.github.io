@@ -97,9 +97,16 @@ layout: default
       return bottom - top;
     }
 
+    // Set width explicitly too, so the aspect ratio holds even if a stale stylesheet is cached.
+    function setHeight(h) {
+      img.style.height = h + 'px';
+      img.style.width = (h * img.naturalWidth) / img.naturalHeight + 'px';
+    }
+
     function fit() {
       if (window.innerWidth < 576 || !img.naturalWidth) {
         img.style.height = '';
+        img.style.width = '';
         return;
       }
       // Text gets taller as the photo widens, so bisect for the height where they match.
@@ -107,11 +114,11 @@ layout: default
       let hi = (row.clientWidth * 0.5 * img.naturalHeight) / img.naturalWidth;
       for (let i = 0; i < 20; i++) {
         const mid = (lo + hi) / 2;
-        img.style.height = mid + 'px';
+        setHeight(mid);
         if (textHeight() > mid) lo = mid;
         else hi = mid;
       }
-      img.style.height = lo + 'px';
+      setHeight(lo);
     }
 
     if (img.complete) fit();
