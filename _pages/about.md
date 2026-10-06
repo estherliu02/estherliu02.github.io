@@ -26,7 +26,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am Esther Liu, a second-year Master’s student in Computer Science at Brown University. I am fortunate to work with Prof. [Serena Booth](https://slbooth.com/) and Prof. [Michael Littman](https://www.littmania.com/) at Brown and Prof. [Elena L. Glassman](https://glassmanlab.seas.harvard.edu/) at Harvard. Before joining Brown, I completed my Bachelor of Computer Science at the University of Waterloo, majoring in Data Science with a minor in Statistics and a diploma in Korean. 
+I am Esther Liu, a second-year Master’s student in Computer Science at Brown University. I am fortunate to work with Prof. [Serena Booth](https://slbooth.com/) and Prof. [Michael Littman](https://www.littmania.com/) at Brown and Prof. [Elena L. Glassman](https://glassmanlab.seas.harvard.edu/) at Harvard. Before joining Brown, I completed my Bachelor of Computer Science at the University of Waterloo, majoring in Data Science with a minor in Statistics and a diploma in Korean.
 
 My research interests lie at the intersection of NLP and HCI, particularly in how to enable effective human-AI complementarity. My current work spans benchmarking and evaluating LLMs (e.g., [Sci2Pol](https://iclr.cc/virtual/2026/poster/10009432)), human-AI decision-making (e.g., [AI Safety via Debate is Compromised by Cognitive Biases](https://arxiv.org/abs/2610.05461)), and interactive system design.
 
