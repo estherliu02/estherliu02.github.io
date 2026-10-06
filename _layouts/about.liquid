@@ -15,30 +15,32 @@ layout: default
   </header>
 
   <article>
-    {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-        {% if page.profile.image %}
-          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          {% if page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-          {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
+    <div class="profile-row{% if page.profile.align == 'left' %} profile-row-left{% endif %}">
+      {% if page.profile %}
+        <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+          {% if page.profile.image %}
+            {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+            {% if page.profile.image_circular %}
+              {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+            {% else %}
+              {% assign profile_image_class = 'img-fluid z-depth-1
       rounded' %}
-          {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
+            {% endif %}
+            {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
       30vw, 95vw"{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-            cache_bust=true
-          %}
-        {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
-        {% endif %}
-      </div>
-    {% endif %}
+            {%
+              include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+              cache_bust=true
+            %}
+          {% endif %}
+          {% if page.profile.more_info %}
+            <div class="more-info">{{ page.profile.more_info }}</div>
+          {% endif %}
+        </div>
+      {% endif %}
 
-    <div class="clearfix">{{ content }}</div>
+      <div class="clearfix profile-text">{{ content }}</div>
+    </div>
 
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
@@ -78,3 +80,43 @@ layout: default
     {% endif %}
   </article>
 </div>
+
+<script>
+  // Match the profile photo height to the intro text height, keeping the photo's aspect ratio.
+  (function () {
+    const row = document.querySelector('.profile-row');
+    const img = row && row.querySelector('.profile img');
+    const text = row && row.querySelector('.profile-text');
+    if (!img || !text) return;
+
+    function textHeight() {
+      const children = text.children;
+      if (!children.length) return text.offsetHeight;
+      const top = children[0].getBoundingClientRect().top;
+      const bottom = children[children.length - 1].getBoundingClientRect().bottom;
+      return bottom - top;
+    }
+
+    function fit() {
+      if (window.innerWidth < 576 || !img.naturalWidth) {
+        img.style.height = '';
+        return;
+      }
+      // Text gets taller as the photo widens, so bisect for the height where they match.
+      let lo = 0;
+      let hi = (row.clientWidth * 0.5 * img.naturalHeight) / img.naturalWidth;
+      for (let i = 0; i < 20; i++) {
+        const mid = (lo + hi) / 2;
+        img.style.height = mid + 'px';
+        if (textHeight() > mid) lo = mid;
+        else hi = mid;
+      }
+      img.style.height = lo + 'px';
+    }
+
+    if (img.complete) fit();
+    img.addEventListener('load', fit);
+    window.addEventListener('resize', fit);
+    if (document.fonts) document.fonts.ready.then(fit);
+  })();
+</script>

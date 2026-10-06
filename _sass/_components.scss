@@ -90,6 +90,39 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+@media (min-width: 576px) {
+  .profile-row {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    gap: 1rem;
+
+    &.profile-row-left {
+      flex-direction: row;
+    }
+
+    .profile {
+      flex: none;
+      width: auto;
+      margin: 0;
+
+      figure {
+        margin: 0;
+      }
+
+      img {
+        width: auto;
+        max-width: none;
+      }
+    }
+
+    .profile-text {
+      flex: 1 1 0;
+      min-width: 0;
+    }
+  }
+}
+
 // CV
 
 .cv {
